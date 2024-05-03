@@ -40,6 +40,7 @@ dependencies:
   firebase_core: ^2.30.1
   cached_network_image: ^3.3.1
   font_awesome_flutter: ^10.7.0
+  responsive_builder: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -79,10 +80,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/Pretendard-Regular.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
