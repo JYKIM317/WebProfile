@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:webprofile/presentation/page/page_desktop_view.dart';
+import 'package:webprofile/presentation/page/page_mobile_view.dart';
 
 void main() async {
   const String font = "Pretendard";
@@ -17,23 +19,10 @@ void main() async {
           fontFamily: font,
         ),
         home: ScreenTypeLayout.builder(
-          tablet: (BuildContext context) => MyApp(), //Web view
-          mobile: (BuildContext context) => MyApp(), //Mobile view
+          tablet: (BuildContext context) => const DesktopPage(), //Web view
+          mobile: (BuildContext context) => const MobilePage(), //Mobile view
         ),
       ),
     ),
   );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('ddd'),
-      ),
-    );
-  }
 }
