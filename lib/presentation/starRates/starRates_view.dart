@@ -20,7 +20,7 @@ class _StarRatesState extends ConsumerState<StarRates>
 
   bool hoverState = false;
 
-  Duration eventDuration = const Duration(milliseconds: 80);
+  Duration eventDuration = const Duration(milliseconds: 100);
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _StarRatesState extends ConsumerState<StarRates>
       vsync: this,
       duration: eventDuration,
       lowerBound: 0,
-      upperBound: 0.12,
+      upperBound: 0.4,
     )..addListener(() => setState(() {}));
 
     super.initState();
@@ -93,9 +93,12 @@ class _StarRatesState extends ConsumerState<StarRates>
                     },
                   );
                 },
-                icon: Transform.scale(
-                  scale: idx < starRate ? 1 + _starScaleController.value : 1,
-                  child: const FaIcon(FontAwesomeIcons.solidStar),
+                icon: Transform.translate(
+                  offset: Offset(0, idx < hoverIndex ? -2 : 0),
+                  child: Transform.scale(
+                    scale: idx < starRate ? 1 + _starScaleController.value : 1,
+                    child: const FaIcon(FontAwesomeIcons.solidStar),
+                  ),
                 ),
                 color: starColor(idx),
                 iconSize: widget.isMobile ? 38 : 52,
