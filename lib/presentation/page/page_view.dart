@@ -5,6 +5,7 @@ import 'package:webprofile/presentation/starRates/starRatesText_view.dart';
 import 'package:webprofile/presentation/copyright/copyright_view.dart';
 import 'package:webprofile/presentation/intro/intro_view.dart';
 import 'package:webprofile/presentation/aboutMe/aboutMe_view.dart';
+import 'package:webprofile/presentation/skills/skills_view.dart';
 
 class PageView extends StatelessWidget {
   const PageView({super.key});
@@ -26,7 +27,7 @@ class PageView extends StatelessWidget {
                 //intro
                 IntroView(isMobile: isMobile),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 40),
+                  child: SizedBox(height: 60),
                 ),
                 //about me
                 SliverPadding(
@@ -34,15 +35,19 @@ class PageView extends StatelessWidget {
                   sliver: AboutMe(isMobile: isMobile),
                 ),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 40),
+                  child: SizedBox(height: 60),
                 ),
                 //skills
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 32),
+                  sliver: Skills(isMobile: isMobile),
+                ),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 40),
+                  child: SizedBox(height: 60),
                 ),
                 //projects
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 40),
+                  child: SizedBox(height: 60),
                 ),
                 //Star rates text
                 SliverPadding(
@@ -55,11 +60,11 @@ class PageView extends StatelessWidget {
                   sliver: StarRates(isMobile: isMobile),
                 ),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 40),
+                  child: SizedBox(height: 60),
                 ),
                 const CopyrightText(),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 20),
+                  child: SizedBox(height: 40),
                 ),
               ],
             ),
