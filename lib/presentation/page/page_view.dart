@@ -3,14 +3,16 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:webprofile/presentation/starRates/starRates_view.dart';
 import 'package:webprofile/presentation/starRates/starRatesText_view.dart';
 import 'package:webprofile/presentation/copyright/copyright_view.dart';
+import 'package:webprofile/presentation/intro/intro_view.dart';
+import 'package:webprofile/presentation/aboutMe/aboutMe_view.dart';
 
 class PageView extends StatelessWidget {
   const PageView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: ResponsiveBuilder(
+    return Scaffold(
+      body: ResponsiveBuilder(
         builder: (context, sizingInformation) {
           bool isMobile =
               sizingInformation.deviceScreenType == DeviceScreenType.mobile;
@@ -22,10 +24,15 @@ class PageView extends StatelessWidget {
               physics: const ClampingScrollPhysics(),
               slivers: [
                 //intro
+                IntroView(isMobile: isMobile),
                 const SliverToBoxAdapter(
                   child: SizedBox(height: 40),
                 ),
                 //about me
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 32),
+                  sliver: AboutMe(isMobile: isMobile),
+                ),
                 const SliverToBoxAdapter(
                   child: SizedBox(height: 40),
                 ),
@@ -51,6 +58,9 @@ class PageView extends StatelessWidget {
                   child: SizedBox(height: 40),
                 ),
                 const CopyrightText(),
+                const SliverToBoxAdapter(
+                  child: SizedBox(height: 20),
+                ),
               ],
             ),
           );
