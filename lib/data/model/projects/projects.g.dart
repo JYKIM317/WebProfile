@@ -11,9 +11,9 @@ _$ProjectsImpl _$$ProjectsImplFromJson(Map<String, dynamic> json) =>
       appName: json['appName'] as String,
       thumbnailURLs: json['thumbnailURLs'] as List<dynamic>,
       usingSkills: json['usingSkills'] as List<dynamic>,
-      description: json['description'] as String,
-      startFlag: json['startFlag'] as String,
-      endFlag: json['endFlag'] as String,
+      about: json['about'] as String,
+      background: json['background'] as String,
+      learn: json['learn'] as String,
     );
 
 Map<String, dynamic> _$$ProjectsImplToJson(_$ProjectsImpl instance) =>
@@ -21,7 +21,7 @@ Map<String, dynamic> _$$ProjectsImplToJson(_$ProjectsImpl instance) =>
       'appName': instance.appName,
       'thumbnailURLs': instance.thumbnailURLs,
       'usingSkills': instance.usingSkills,
-      'description': instance.description,
-      'startFlag': instance.startFlag,
-      'endFlag': instance.endFlag,
+      'about': instance.about,
+      'background': instance.background,
+      'learn': instance.learn,
     };

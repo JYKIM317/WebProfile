@@ -23,9 +23,9 @@ mixin _$Projects {
   String get appName => throw _privateConstructorUsedError;
   List<dynamic> get thumbnailURLs => throw _privateConstructorUsedError;
   List<dynamic> get usingSkills => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get startFlag => throw _privateConstructorUsedError;
-  String get endFlag => throw _privateConstructorUsedError;
+  String get about => throw _privateConstructorUsedError;
+  String get background => throw _privateConstructorUsedError;
+  String get learn => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,9 +42,9 @@ abstract class $ProjectsCopyWith<$Res> {
       {String appName,
       List<dynamic> thumbnailURLs,
       List<dynamic> usingSkills,
-      String description,
-      String startFlag,
-      String endFlag});
+      String about,
+      String background,
+      String learn});
 }
 
 /// @nodoc
@@ -63,9 +63,9 @@ class _$ProjectsCopyWithImpl<$Res, $Val extends Projects>
     Object? appName = null,
     Object? thumbnailURLs = null,
     Object? usingSkills = null,
-    Object? description = null,
-    Object? startFlag = null,
-    Object? endFlag = null,
+    Object? about = null,
+    Object? background = null,
+    Object? learn = null,
   }) {
     return _then(_value.copyWith(
       appName: null == appName
@@ -80,17 +80,17 @@ class _$ProjectsCopyWithImpl<$Res, $Val extends Projects>
           ? _value.usingSkills
           : usingSkills // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      about: null == about
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
               as String,
-      startFlag: null == startFlag
-          ? _value.startFlag
-          : startFlag // ignore: cast_nullable_to_non_nullable
+      background: null == background
+          ? _value.background
+          : background // ignore: cast_nullable_to_non_nullable
               as String,
-      endFlag: null == endFlag
-          ? _value.endFlag
-          : endFlag // ignore: cast_nullable_to_non_nullable
+      learn: null == learn
+          ? _value.learn
+          : learn // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -108,9 +108,9 @@ abstract class _$$ProjectsImplCopyWith<$Res>
       {String appName,
       List<dynamic> thumbnailURLs,
       List<dynamic> usingSkills,
-      String description,
-      String startFlag,
-      String endFlag});
+      String about,
+      String background,
+      String learn});
 }
 
 /// @nodoc
@@ -127,9 +127,9 @@ class __$$ProjectsImplCopyWithImpl<$Res>
     Object? appName = null,
     Object? thumbnailURLs = null,
     Object? usingSkills = null,
-    Object? description = null,
-    Object? startFlag = null,
-    Object? endFlag = null,
+    Object? about = null,
+    Object? background = null,
+    Object? learn = null,
   }) {
     return _then(_$ProjectsImpl(
       appName: null == appName
@@ -144,17 +144,17 @@ class __$$ProjectsImplCopyWithImpl<$Res>
           ? _value._usingSkills
           : usingSkills // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      about: null == about
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
               as String,
-      startFlag: null == startFlag
-          ? _value.startFlag
-          : startFlag // ignore: cast_nullable_to_non_nullable
+      background: null == background
+          ? _value.background
+          : background // ignore: cast_nullable_to_non_nullable
               as String,
-      endFlag: null == endFlag
-          ? _value.endFlag
-          : endFlag // ignore: cast_nullable_to_non_nullable
+      learn: null == learn
+          ? _value.learn
+          : learn // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -167,9 +167,9 @@ class _$ProjectsImpl implements _Projects {
       {required this.appName,
       required final List<dynamic> thumbnailURLs,
       required final List<dynamic> usingSkills,
-      required this.description,
-      required this.startFlag,
-      required this.endFlag})
+      required this.about,
+      required this.background,
+      required this.learn})
       : _thumbnailURLs = thumbnailURLs,
         _usingSkills = usingSkills;
 
@@ -195,15 +195,15 @@ class _$ProjectsImpl implements _Projects {
   }
 
   @override
-  final String description;
+  final String about;
   @override
-  final String startFlag;
+  final String background;
   @override
-  final String endFlag;
+  final String learn;
 
   @override
   String toString() {
-    return 'Projects(appName: $appName, thumbnailURLs: $thumbnailURLs, usingSkills: $usingSkills, description: $description, startFlag: $startFlag, endFlag: $endFlag)';
+    return 'Projects(appName: $appName, thumbnailURLs: $thumbnailURLs, usingSkills: $usingSkills, about: $about, background: $background, learn: $learn)';
   }
 
   @override
@@ -216,11 +216,10 @@ class _$ProjectsImpl implements _Projects {
                 .equals(other._thumbnailURLs, _thumbnailURLs) &&
             const DeepCollectionEquality()
                 .equals(other._usingSkills, _usingSkills) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.startFlag, startFlag) ||
-                other.startFlag == startFlag) &&
-            (identical(other.endFlag, endFlag) || other.endFlag == endFlag));
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.background, background) ||
+                other.background == background) &&
+            (identical(other.learn, learn) || other.learn == learn));
   }
 
   @JsonKey(ignore: true)
@@ -230,9 +229,9 @@ class _$ProjectsImpl implements _Projects {
       appName,
       const DeepCollectionEquality().hash(_thumbnailURLs),
       const DeepCollectionEquality().hash(_usingSkills),
-      description,
-      startFlag,
-      endFlag);
+      about,
+      background,
+      learn);
 
   @JsonKey(ignore: true)
   @override
@@ -253,9 +252,9 @@ abstract class _Projects implements Projects {
       {required final String appName,
       required final List<dynamic> thumbnailURLs,
       required final List<dynamic> usingSkills,
-      required final String description,
-      required final String startFlag,
-      required final String endFlag}) = _$ProjectsImpl;
+      required final String about,
+      required final String background,
+      required final String learn}) = _$ProjectsImpl;
 
   factory _Projects.fromJson(Map<String, dynamic> json) =
       _$ProjectsImpl.fromJson;
@@ -267,11 +266,11 @@ abstract class _Projects implements Projects {
   @override
   List<dynamic> get usingSkills;
   @override
-  String get description;
+  String get about;
   @override
-  String get startFlag;
+  String get background;
   @override
-  String get endFlag;
+  String get learn;
   @override
   @JsonKey(ignore: true)
   _$$ProjectsImplCopyWith<_$ProjectsImpl> get copyWith =>

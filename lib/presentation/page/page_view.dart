@@ -6,6 +6,7 @@ import 'package:webprofile/presentation/copyright/copyright_view.dart';
 import 'package:webprofile/presentation/intro/intro_view.dart';
 import 'package:webprofile/presentation/aboutMe/aboutMe_view.dart';
 import 'package:webprofile/presentation/skills/skills_view.dart';
+import 'package:webprofile/presentation/projects/projects_view.dart';
 
 class PageView extends StatelessWidget {
   const PageView({super.key});
@@ -46,8 +47,12 @@ class PageView extends StatelessWidget {
                   child: SizedBox(height: 60),
                 ),
                 //projects
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 32),
+                  sliver: ProjectsView(isMobile: isMobile),
+                ),
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 60),
+                  child: SizedBox(height: 100),
                 ),
                 //Star rates text
                 SliverPadding(

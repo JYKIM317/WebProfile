@@ -30,10 +30,21 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
       child: Column(
         children: [
           Center(
-            child: Text(
-              'About me',
-              style: TextStyle(
-                fontSize: isMobile ? 32 : 48,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.black54,
+                    width: isMobile ? 2 : 4,
+                  ),
+                ),
+              ),
+              child: Text(
+                'About me',
+                style: TextStyle(
+                  fontSize: isMobile ? 32 : 48,
+                  letterSpacing: 4,
+                ),
               ),
             ),
           ),

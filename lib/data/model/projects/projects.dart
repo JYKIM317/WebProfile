@@ -9,9 +9,9 @@ class Projects with _$Projects {
     required String appName,
     required List<dynamic> thumbnailURLs,
     required List<dynamic> usingSkills,
-    required String description,
-    required String startFlag,
-    required String endFlag,
+    required String about,
+    required String background,
+    required String learn,
   }) = _Projects;
 
   factory Projects.fromJson(Map<String, dynamic> json) =>
