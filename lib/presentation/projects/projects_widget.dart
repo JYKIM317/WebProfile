@@ -141,10 +141,10 @@ class _ProjectReadmeDesktopState extends State<ProjectReadmeDesktop> {
                         child: Text.rich(
                           textAlign: TextAlign.left,
                           TextSpan(
-                            text: '\n어떤 앱인가요?\n\n',
+                            text: '\n어떤 앱인가요?\n',
                             style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 21,
+                              fontWeight: FontWeight.w700,
                             ),
                             children: [
                               TextSpan(
@@ -155,7 +155,7 @@ class _ProjectReadmeDesktopState extends State<ProjectReadmeDesktop> {
                                 ),
                               ),
                               const TextSpan(
-                                text: '\n\n앱의 제작배경\n\n',
+                                text: '\n\n앱의 제작배경\n',
                               ),
                               TextSpan(
                                 text: project.background.replaceAll('  ', '\n'),
@@ -165,7 +165,7 @@ class _ProjectReadmeDesktopState extends State<ProjectReadmeDesktop> {
                                 ),
                               ),
                               const TextSpan(
-                                text: '\n\n무엇을 배웠나요?\n\n',
+                                text: '\n\n무엇을 배웠나요?\n',
                               ),
                               TextSpan(
                                 text: project.learn.replaceAll('  ', '\n'),
@@ -320,26 +320,38 @@ class _ProjectReadmeState extends State<ProjectReadmeMobile> {
                         child: Text.rich(
                           textAlign: TextAlign.left,
                           TextSpan(
-                            text: '\n어떤 앱인가요?\n\n',
-                            style: const TextStyle(fontSize: 18),
+                            text: '\n어떤 앱인가요?\n',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                            ),
                             children: [
                               TextSpan(
                                 text: project.about,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                               const TextSpan(
-                                text: '\n\n앱의 제작배경\n\n',
+                                text: '\n\n앱의 제작배경\n',
                               ),
                               TextSpan(
                                 text: project.background,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                               const TextSpan(
-                                text: '\n\n무엇을 배웠나요?\n\n',
+                                text: '\n\n무엇을 배웠나요?\n',
                               ),
                               TextSpan(
                                 text: project.learn,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                             ],
                           ),
