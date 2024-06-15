@@ -9,6 +9,7 @@ enum HoverState {
   birth,
   email,
   github,
+  blog,
 }
 
 class AboutMe extends StatefulWidget {
@@ -83,6 +84,17 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
                     await launchUrl(gitHubUrl);
                   },
                   child: github(HoverState.nil),
+                ),
+                const SizedBox(height: 10),
+                InkWell(
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  onTap: () async {
+                    final Uri blogUrl =
+                        Uri.parse('https://medium.com/@delivalue100');
+                    await launchUrl(blogUrl);
+                  },
+                  child: blog(HoverState.nil),
                 ),
               ],
             ),
@@ -168,6 +180,33 @@ class _AboutMeState extends State<AboutMe> with TickerProviderStateMixin {
                         await launchUrl(gitHubUrl);
                       },
                       child: github(hoverState),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      onHover: (state) {
+                        setState(() {
+                          state
+                              ? hoverState = HoverState.blog
+                              : hoverState = HoverState.nil;
+                        });
+                      },
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        final Uri blogUrl =
+                            Uri.parse('https://medium.com/@delivalue100');
+                        await launchUrl(blogUrl);
+                      },
+                      child: blog(hoverState),
+                    ),
+                    //빈공간 채우기용
+                    const SizedBox(
+                      width: 250,
                     ),
                   ],
                 ),
@@ -305,7 +344,7 @@ Widget email(HoverState state) {
   );
 }
 
-//Github
+//github
 Widget github(HoverState state) {
   return Container(
     width: 250,
@@ -339,6 +378,49 @@ Widget github(HoverState state) {
             ),
             Text(
               'JYKIM0317',
+              style: TextStyle(fontSize: 18),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+//blog
+Widget blog(HoverState state) {
+  return Container(
+    width: 250,
+    height: 60,
+    alignment: Alignment.center,
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 50,
+          alignment: Alignment.topLeft,
+          child: Transform(
+            transform: Matrix4.identity()
+              ..rotateX(state == HoverState.blog ? 0.4 : 0)
+              ..rotateY(state == HoverState.blog ? 0.4 : 0),
+            child: const FaIcon(
+              FontAwesomeIcons.medium,
+              size: 52,
+            ),
+          ),
+        ),
+        const SizedBox(width: 20),
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Blog',
+              style: TextStyle(fontSize: 18),
+            ),
+            Text(
+              'JINYOUNG',
               style: TextStyle(fontSize: 18),
             ),
           ],
